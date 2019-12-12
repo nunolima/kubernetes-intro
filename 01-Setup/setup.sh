@@ -63,16 +63,16 @@ docker-compose --version
 sudo curl -L https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 -o /usr/local/bin/minikube
 sudo chmod +x /usr/local/bin/minikube
 sudo ln -s /usr/local/bin/minikube /usr/bin/minikube
-sh -c 'echo "source <(minikube completion bash)" >> /etc/bash_completion.d/minikube'
-source /etc/bash-completion
+sudo sh -c 'echo "source <(minikube completion bash)" >> /etc/bash_completion.d/minikube'
+source /etc/bash_completion
 minikube update-check
 
 # kubectl
 sudo curl -L https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl
 sudo chmod +x /usr/local/bin/kubectl
 sudo ln -s /usr/local/bin/kubectl /usr/bin/kubectl
-sh -c 'echo "source <(kubectl completion bash)" >> /etc/bash_completion.d/kubectl'
-source /etc/bash-completion
+sudo sh -c 'echo "source <(kubectl completion bash)" >> /etc/bash_completion.d/kubectl'
+source /etc/bash_completion
 kubectl version
 
 echo '============================='
