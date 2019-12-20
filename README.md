@@ -14,3 +14,15 @@ minikube dashboard
 minikume update-context
 minikube stop
 ```
+## Summary
+Summary of the key API objects of Kubernetes:
+
+- Clusters: Pool of compute, storage, and network resources.
+- Nodes: Host machines running within the cluster.
+- Namespaces: Logical partitions of a cluster.
+- Pods: Units of deployment.
+- Labels and Selectors: Key-Value pairs for identification and service discovery.
+- Services: Collection of Pods belonging to the same application.
+- Replica Set: Ensures availability and scalability.
+- Deployment: Manages application lifecycle.
+
