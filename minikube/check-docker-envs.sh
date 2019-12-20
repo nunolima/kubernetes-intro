@@ -1,0 +1,10 @@
+#!/bin/bash
+echo "DOCKER_TLS_VERIFY=$DOCKER_TLS_VERIFY"
+echo "DOCKER_HOST=$DOCKER_HOST"
+echo "DOCKER_CERT_PATH=$DOCKER_CERT_PATH"
+echo "DOCKER_API_VERSION=$DOCKER_API_VERSION"
+echo "=============================================================================================="
+echo "[TIPS]"
+printf "\t- To use 'minikube docker registry' from your host run:\tsource set-docker-envs.sh\n"
+printf "\t- To use your local host 'docker registry' run:\t\tsource unset-docker-envs.sh\n"
+echo "=============================================================================================="

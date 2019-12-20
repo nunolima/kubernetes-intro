@@ -6,12 +6,12 @@
 
 echo '============================='
 
-minikube delete
+#minikube delete
 minikube start
-#eval $(minikube docker-env)
+#run: eval $(minikube docker-env) # or: source set-docker-envs.sh
 
 echo '============================='
-kube status
+minikube status
 
 KCONTEXT=$(kubectl config current-context)
 
