@@ -7,4 +7,7 @@ if [ $KCONTEXT != 'minikube' ]; then
     exit -1;
 fi
 
-kubectl apply -f kube-registry.yaml
+kubectl apply -f .
+kubectl get pods -o wide
+
+echo "[TIPS] kubectl run -it --rm my-ubuntu-bash --image ubuntu  -- bash"

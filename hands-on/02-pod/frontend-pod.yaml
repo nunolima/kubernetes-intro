@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-simple-pod
+spec:
+  containers:
+    - name: frontend-simple-pod
+      image: minikube-frontend-img:1.0
+      ports:
+        - containerPort: 80
