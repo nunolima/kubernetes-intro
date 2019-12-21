@@ -14,6 +14,9 @@ minikube dashboard
 minikume update-context
 minikube stop
 ```
+## Kubernetes Tutorials
+[k8s tutorials](https://kubernetes.io/docs/tutorials/)
+
 ## Summary
 Summary of the key API objects of Kubernetes:
 
