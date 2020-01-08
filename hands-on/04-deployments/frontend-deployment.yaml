@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
@@ -16,8 +16,7 @@ spec:
         app: fo
     spec:
       containers:
-      - image: minikube-frontend:latest 
+      - image: minikube-frontend-img:1.0
         name: frontend
-        imagePullPolicy: Always
         ports:
         - containerPort: 80

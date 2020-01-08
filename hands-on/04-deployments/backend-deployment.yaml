@@ -1,24 +1,21 @@
-
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend
+  name: backend-deployment
   labels:
-    app: api
+    app: nginx
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: api
+      app: backend
   template:
     metadata:
       labels:
-        app: api
+        app: backend
     spec:
       containers:
-      - image: minikube-backend:latest
-        name: backend
-        imagePullPolicy: Always
+      - name: backend
+        image: minikube-backend-img:1.0
         ports:
         - containerPort: 8090
-
