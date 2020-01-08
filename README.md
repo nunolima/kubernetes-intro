@@ -14,9 +14,11 @@ minikube dashboard
 minikume update-context
 minikube stop
 ```
+
 ## Kubernetes Tutorials
 [k8s tutorials](https://kubernetes.io/docs/tutorials/)
 [Great/Fast Video](https://www.youtube.com/watch?v=90kZRyPcRZw)
+[k8s intro hands-on](https://www.bogotobogo.com/DevOps/DevOps-Kubernetes-1-Running-Kubernetes-Locally-via-Minikube.php)
 
 ## Summary
 Summary of the key API objects of Kubernetes:
