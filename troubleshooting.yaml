@@ -1,0 +1,50 @@
+# troubleshooting
+
+## Ubuntu "daemon" pod
+
+```bash
+cat << EOF > my-ubuntu.pod.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-ubuntu
+spec:
+  containers:
+  - name: my-ubuntu
+    image: ubuntu:latest
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
+EOF
+
+kubectl apply -f my-ubuntu.pod.yaml
+
+kubectl get pods my-ubuntu
+
+kubectl exec -it my-ubuntu -- bash
+
+kubectl delete -f my-ubuntu.pod.yaml
+```
+
+## Flush CoreDNS Cache on Kubernetes Cluster
+
+1. Without downtime:
+
+```bash
+# add a dummy env var
+kubectl -n kube-system set env deployment.apps coredns FOO="BAR"
+# check the old pods terminating and been created new ones
+kubectl -n kube-system get pods -l k8s-app=kube-dns
+# to clean/remove the dummy env var ...
+kubectl -n kube-system set env deployment.apps/coredns FOO-
+```
+
+2. With some downtime
+
+Just delete all codedns pods.
+
+```bash
+kubectl -n kube-system get pods -l k8s-app=kube-dns
+kubectl -n kube-system delete pods -l k8s-app=kube-dns
+```
+
