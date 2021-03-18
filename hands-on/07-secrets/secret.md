@@ -16,7 +16,7 @@ echo -n 'user123' | base64
 echo -n '39528$vdg7Jb' | base64
 
 # 2. Create a Secret
-cat < EOF >> my-secret.yaml
+cat << EOF > my-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -46,7 +46,7 @@ kubectl create secret generic test-secret --from-literal='username=my-app' --fro
 
 ```bash
 # write the pod manifest
-cat < EOF >> secret-test-pod.yaml
+cat << EOF > secret-test-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -86,7 +86,7 @@ cat /etc/secret-volume/password
 ```bash
 kubectl create secret generic backend-user --from-literal=backend-username='backend-admin'
 
-cat < EOF >> pod.yaml
+cat << EOF > pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -114,7 +114,7 @@ kubectl exec -i -t env-single-secret -- /bin/sh -c 'echo $SECRET_USERNAME'
 kubectl create secret generic backend-user --from-literal=backend-username='backend-admin'
 kubectl create secret generic db-user --from-literal=db-username='db-admin'
 
-cat < EOF >> pod.yaml
+cat << EOF > pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -146,7 +146,7 @@ kubectl exec -i -t envvars-multiple-secrets -- /bin/sh -c 'env | grep _USERNAME'
 ```bash
 kubectl create secret generic test-secret --from-literal=username='my-app' --from-literal=password='39528$vdg7Jb'
 
-cat < EOF >> pod.yaml
+cat << EOF > pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
